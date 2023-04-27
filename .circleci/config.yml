@@ -8,6 +8,10 @@ jobs:
     docker:
       - image: cimg/base:stable
     steps:
+      - queue/until_front_of_line:
+          only-on-branch: main
+          time: '10'
+          block-workflow: false
       - checkout
       - run:
           name: Snooze time
@@ -16,12 +20,6 @@ jobs:
 workflows:
   my-workflow:
     jobs:
-      - queue/block_workflow:
-          only-on-branch: main
-          time: '10'
-          block-workflow: false
+      - build:
           context:
             - cci
-      - build:
-          requires:
-            - queue/block_workflow
