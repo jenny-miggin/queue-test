@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  queue: eddiewebb/queue@2.2.1
+  queue: eddiewebb/queue@1.8.1
 
 jobs:
   build:
