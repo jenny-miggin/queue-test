@@ -21,4 +21,6 @@ workflows:
           time: '10'
           context:
             - cci
-      - build
+      - build:
+          requires:
+            - queue/block_workflow
