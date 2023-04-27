@@ -15,7 +15,7 @@ jobs:
       - checkout
       - run:
           name: Snooze time
-          command: sleep 60
+          command: sleep 100
 
 workflows:
   my-workflow:
