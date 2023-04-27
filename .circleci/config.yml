@@ -11,7 +11,6 @@ jobs:
       - queue/until_front_of_line:
           only-on-branch: main
           time: '10'
-          block-workflow: false
       - checkout
       - run:
           name: Snooze time
