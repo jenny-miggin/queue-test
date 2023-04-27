@@ -6,7 +6,7 @@ orbs:
 jobs:
   build:
     docker:
-      - image: cimg/base:stable
+      - image: cimg/base:2021.07-20.04
     steps:
       - queue/until_front_of_line:
           only-on-branch: main
