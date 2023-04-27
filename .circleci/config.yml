@@ -19,6 +19,6 @@ workflows:
       - queue/block_workflow:
           only-on-branch: main
           time: '10'
-          contexts:
+          context:
             - cci
       - build
