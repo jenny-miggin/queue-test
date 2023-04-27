@@ -11,7 +11,7 @@ jobs:
       - checkout
       - run:
           name: Snooze time
-          command: sleep 360
+          command: sleep 60
 
 workflows:
   my-workflow:
@@ -19,6 +19,7 @@ workflows:
       - queue/block_workflow:
           only-on-branch: main
           time: '10'
+          block-workflow: false
           context:
             - cci
       - build:
