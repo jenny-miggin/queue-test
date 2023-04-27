@@ -1,0 +1,24 @@
+version: 2.1
+
+orbs:
+  queue: eddiewebb/queue@2.2.1
+
+jobs:
+  build:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - run:
+          name: Snooze time
+          command: sleep 360
+
+workflows:
+  my-workflow:
+    jobs:
+      - queue/block_workflow:
+          only-on-branch: main
+          time: '10'
+          contexts:
+            - cci
+      - build
